@@ -1,12 +1,23 @@
-📅 Day 01 – Introduction to Databricks & Lakehouse
+📅 Day 1 – Platform Setup and First Steps
 
-🔹 What I Learned
-- What Databricks is and why it is used
-- Difference between Data Lake and Data Warehouse
-- Concept of Lakehouse Architecture
-- Databricks Workspace overview
+🔹 What I Learned:
+- Why Databricks vs Pandas/Hadoop ?
+- Lakehouse architecture difference
+- Databricks workspace structure
+- Industry use cases (Netflix, Shell, Comcast)
 
-🔹 Key Concepts
-- Databricks = Unified platform for Data Engineering + Analytics + AI
-- Lakehouse = Data Lake + Data Warehouse benefits
-- Supports batch + streaming + ML
+🔹 Tasks:
+1. Create Databricks Community Edition account
+2. Navigate Workspace, Compute, Data Explorer
+3. Create first notebook
+4. Run basic PySpark commands
+
+🔹 Practice:
+
+# Create simple DataFrame
+data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
+df = spark.createDataFrame(data, ["product", "price"])
+df.show()
+
+# Filter expensive products
+df.filter(df.price > 1000).show()
