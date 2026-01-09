@@ -11,9 +11,7 @@
 - Downloaded & extracted multi-category ecommerce dataset 
 - Loaded both Oct & Nov 2019 files into Spark DataFrames
 
-### Databricks environment set up:
-
-## Step by step guidance:
+## Databricks Environment Set-up - Step by step guidance:
 
 1️⃣ Create Databricks account
 - Sign up for Databricks Free (Community Edition)
