@@ -20,13 +20,12 @@ data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
 df = spark.createDataFrame(data, ["product", "price"])
 df.show()
 
-+-------+-----+
-|product|price|
-+-------+-----+
-| iPhone|  999|
-|Samsung|  799|
-|MacBook| 1299|
-+-------+-----+
+| Product | Price |
+|--------|-------|
+| iPhone | 999 |
+| Samsung | 799 |
+| MacBook | 1299 |
+
 
 
 
@@ -34,9 +33,9 @@ df.show()
 
 df.filter(df.price > 1000).show()
 
-+-------+-----+
+|-------|-----|
 |product|price|
-+-------+-----+
+|-------|-----|
 |MacBook| 1299|
-+-------+-----+
+|-------|-----|
 
