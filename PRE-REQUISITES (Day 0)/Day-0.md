@@ -37,13 +37,13 @@
 
 ➡️Configure Kaggle API
 import os
-os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
-os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
+- os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
+- os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
 
 ➡️Create Schema (Unity Catalog)
-spark.sql("""
-CREATE SCHEMA IF NOT EXISTS workspace.ecommerce
-""")
+- spark.sql("""
+- CREATE SCHEMA IF NOT EXISTS workspace.ecommerce
+- """)
 
 ➡️Create Volume (raw data storage)
 spark.sql("""
