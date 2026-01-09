@@ -17,35 +17,36 @@
 
 ## Databricks Environment Set-up - Step by step guidance:
 
-1️⃣ Create Databricks account
+1. Create Databricks account
 - Sign up for Databricks Free (Community Edition)
 - Log in and create a Python notebook
 
-2️⃣ Generate Kaggle API token
+2. Generate Kaggle API token
 - Kaggle → Account → API → Create New Token
 - This downloads kaggle.json
 
-3️⃣ Upload kaggle.json to Databricks
+3. Upload kaggle.json to Databricks
 - Upload the file to Databricks (used to configure Kaggle access)
 
 ---
 
-### 📦 Dataset Setup:
+### 📦 Download Dataset from Kaggle into Databricks Volume:
+:
 
 ```python
 
-➡️ Install Kaggle
+1. Install Kaggle
 
 %pip install kaggle
 
 import os
 
-➡️ Replace with your Kaggle credentials from kaggle.json
+2. Replace with your Kaggle credentials from kaggle.json
 
 os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
 os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
 
-➡️ Verify setup
+3. Verify setup
 print("Kaggle credentials configured!")
 
 ```
