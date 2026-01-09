@@ -31,7 +31,6 @@
 ---
 
 ### 📦 Download Dataset from Kaggle into Databricks Volume:
-:
 
 ```python
 
