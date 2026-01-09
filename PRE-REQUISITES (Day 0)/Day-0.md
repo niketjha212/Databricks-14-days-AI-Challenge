@@ -1,4 +1,4 @@
-# Day-0 : Setup and Loading (Prerequisites)
+  # Day-0 : Setup and Loading (Prerequisites)
 
 ### Overview:
 - Before starting Day 1, complete this setup to load the e-commerce dataset directly from Kaggle into your Databricks workspace.
@@ -45,15 +45,12 @@ os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
 
 
 ➡️Create Schema (Unity Catalog)
-
-```python
 spark.sql("""
-CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
+CREATE SCHEMA IF NOT EXISTS workspace.ecommerce
 """)
 
-➡️ Create Volume (raw data storage)
 
-```python
+➡️ Create Volume (raw data storage)
 spark.sql("""
 CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
 """)
@@ -63,6 +60,7 @@ CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
 %sh
 cd /Volumes/workspace/ecommerce/ecommerce_data
 kaggle datasets download -d mkechinov/ecommerce-behavior-data-from-multi-category-store
+
 
 ➡️Unzip and clean
 %sh
