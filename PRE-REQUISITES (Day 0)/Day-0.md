@@ -32,12 +32,13 @@
 
 ### 📦 Dataset Setup:
 
+```python
+
 ➡️ Install Kaggle
 - %pip install kaggle
 
 ➡️ Configure Kaggle API
 
-```python
 import os
 
 os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
