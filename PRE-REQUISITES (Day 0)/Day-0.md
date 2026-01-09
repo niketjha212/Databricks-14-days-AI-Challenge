@@ -33,7 +33,7 @@
 ### 📦 Dataset Setup:
 
 ➡️ Install Kaggle
-%pip install kaggle
+- %pip install kaggle
 
 ➡️Configure Kaggle API
 import os
