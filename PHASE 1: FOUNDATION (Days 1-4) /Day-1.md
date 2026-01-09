@@ -1,24 +1,24 @@
-## **DAY 1 – Platform Setup & First Steps**
+# **DAY 1 – Platform Setup & First Steps**
 
-### Learn:
+## Learn:
 - Why Databricks vs Pandas/Hadoop?
 - Lakehouse architecture basics
 - Databricks workspace structure
 - Industry use cases (Netflix, Shell, Comcast)
 
-### 🛠️ Tasks:
+## 🛠️ Tasks:
 1. Create Databricks Community Edition account
 2. Navigate Workspace, Compute, Data Explorer
 3. Create first notebook
 4. Run basic PySpark commands
 
-### Practice:
+## Practice:
 
-# Create simple DataFrame
+### Create simple DataFrame
 data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
 df = spark.createDataFrame(data, ["product", "price"])
 df.show()
 
-# Filter expensive products
+### Filter expensive products
 df.filter(df.price > 1000).show()
 
