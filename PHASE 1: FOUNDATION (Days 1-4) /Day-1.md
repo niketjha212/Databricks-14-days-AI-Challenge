@@ -33,7 +33,6 @@ df.show()
 
 df.filter(df.price > 1000).show()
 
-|-------|-----|
 |product|price|
 |-------|-----|
 |MacBook| 1299|
