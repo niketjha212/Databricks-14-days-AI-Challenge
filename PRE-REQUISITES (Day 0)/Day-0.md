@@ -35,41 +35,56 @@
 ```python
 
 ➡️ Install Kaggle
-- %pip install kaggle
 
-
-➡️ Configure Kaggle API
+%pip install kaggle
 
 import os
+
+➡️ Replace with your Kaggle credentials from kaggle.json
 
 os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
 os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
 
+➡️ Verify setup
+print("Kaggle credentials configured!")
 
-➡️Create Schema (Unity Catalog)
+```
+
+- After configuration of Kaggle API, now follow these below code to download the CSV files.
+- Due to limitation of Databricks Free edition, we could not use DBFS. Instead we can use workspace catalog and volume 
+
+Now follow these code accordingly:
+
+```python
+1. Create Schema (Unity Catalog)
 spark.sql("""
 CREATE SCHEMA IF NOT EXISTS workspace.ecommerce
 """)
 
 
-➡️ Create Volume (raw data storage)
+2.  Create Volume (raw data storage)
 spark.sql("""
 CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
 """)
 
-
-➡️Download dataset into Volume
+3.
 %sh
 cd /Volumes/workspace/ecommerce/ecommerce_data
 kaggle datasets download -d mkechinov/ecommerce-behavior-data-from-multi-category-store
 
 
-➡️Unzip and clean
+4.Unzip dataset into Volume
 %sh
 cd /Volumes/workspace/ecommerce/ecommerce_data
-unzip -o https://lnkd.in/g-MFjfHx
-rm -f https://lnkd.in/g-MFjfHx
+unzip -o ecommerce-behavior-data-from-multi-category-store.zip
 ls -lh
+
+
+5. Removes downloaded ZIP files
+%sh
+cd /Volumes/workspace/ecommerce/ecommerce_data
+rm -f ecommerce-behavior-data-from-multi-category-store.zip
+ls -lh 
 
 
 ```
