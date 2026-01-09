@@ -59,14 +59,8 @@ This learning initiative is supported by the data community and learning resourc
 
 
 ### 🔖 Tags & Mentions:
+#Databricks #Codebasics #IndianDataClub #SQLWithIDC #DPDZero #indiandataclub
 
-#Databricks  
-#Codebasics  
-#IndianDataClub  
-#SQLWithIDC  
-#DPDZero
-#indiandataclub
-#SQLWithIDC
 
 
 
