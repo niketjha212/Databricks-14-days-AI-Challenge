@@ -1,6 +1,6 @@
 # **DAY 1 – Platform Setup & First Steps**
 
-## Things Learnt:
+## 📘 Things Learnt:
 - Why Databricks vs Pandas/Hadoop?
 - Lakehouse architecture basics
 - Databricks workspace structure
@@ -12,7 +12,7 @@
 3. Create first notebook
 4. Run basic PySpark commands
 
-## Practice with Data:
+## 📊 Practice with Data:
 
 ### Create simple DataFrame:
 
