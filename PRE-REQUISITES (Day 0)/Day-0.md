@@ -109,4 +109,4 @@ This learning initiative is supported by the data community and learning resourc
 ---
 
 ### 🔖 Tags & Mentions:
-#Databricks #Codebasics #IndianDataClub #DatabricksWithIDC
+@Databricks @Codebasics @IndianDataClub #DatabricksWithIDC
