@@ -28,7 +28,6 @@ df.show()
 
 
 
-
 ### Filter expensive products:
 
 df.filter(df.price > 1000).show()
@@ -39,23 +38,40 @@ df.filter(df.price > 1000).show()
 
 
 
-### 🔑 Key Takeaways
+### 🔑 Key Takeaways:
 - Databricks provides an integrated **Lakehouse platform** combining data engineering and analytics.
 - PySpark enables **scalable data transformations** using lazy evaluation.
 - Databricks notebooks offer an **interactive and efficient development environment**.
 
 ---
 
-### 🛠️ Tools & Technologies
+### 🛠️ Tools & Technologies:
 - Databricks Community Edition
 - PySpark
 
 ---
 
-### 📚 Learning References & Acknowledgements
+### 📚 Learning References & Acknowledgements:
 This learning initiative is supported by the data community and learning resources from:
 - **Databricks** – https://www.databricks.com
 - **Codebasics** – https://www.codebasics.io
 - **Indian Data Club** – https://indiandataclub.com
+
+
+### 🔖 Tags & Mentions:
+
+#Databricks  
+#Codebasics  
+#IndianDataClub  
+#SQLWithIDC  
+#DPDZero
+#indiandataclub
+#SQLWithIDC
+
+
+
+
+
+
 
 
