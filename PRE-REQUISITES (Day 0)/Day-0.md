@@ -35,20 +35,29 @@
 ➡️ Install Kaggle
 - %pip install kaggle
 
-➡️Configure Kaggle API
+➡️ Configure Kaggle API
+
+```python
 import os
-- os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
-- os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
+
+os.environ["KAGGLE_USERNAME"] = "your_kaggle_username"
+os.environ["KAGGLE_KEY"] = "your_kaggle_api_key"
+
 
 ➡️Create Schema (Unity Catalog)
-- spark.sql("""
-- CREATE SCHEMA IF NOT EXISTS workspace.ecommerce
-- """)
 
-➡️Create Volume (raw data storage)
+```python
 spark.sql("""
 CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
 """)
+
+➡️ Create Volume (raw data storage)
+
+```python
+spark.sql("""
+CREATE VOLUME IF NOT EXISTS workspace.ecommerce.ecommerce_data
+""")
+
 
 ➡️Download dataset into Volume
 %sh
