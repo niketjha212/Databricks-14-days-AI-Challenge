@@ -69,6 +69,9 @@ unzip -o https://lnkd.in/g-MFjfHx
 rm -f https://lnkd.in/g-MFjfHx
 ls -lh
 
+
+```
+
 - If all the steps are followed correctly, the data will now appear in **Workspace → Catalog** and is ready to be used with **Spark**.
 
 ---
