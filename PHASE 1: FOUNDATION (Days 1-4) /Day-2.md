@@ -2,7 +2,7 @@
 
 ---
 
-## Things Learned:
+## Things Learnt:
 - Spark Architecture: Understood the roles of Driver, Executors, and how Spark uses DAG (Directed Acyclic Graph) to optimize execution.
 - DataFrames vs RDDs : Learned why DataFrames are preferred over RDDs due to optimization, ease of use, and Catalyst optimizer.
 - Lazy Evaluation : Spark doesn’t execute immediately — actions trigger execution, helping Spark optimize the entire workflow efficiently.
@@ -19,5 +19,13 @@
 
 --- 
 
-## Tags:
-@Databricks @codebasics @ndiandataclub   
+## 📚 Learning References & Acknowledgements:
+This learning initiative is supported by the data community and learning resources from:
+
+Databricks – https://www.databricks.com
+Codebasics – https://www.codebasics.io
+Indian Data Club – https://indiandataclub.com
+
+
+## 🔖 Tags & Mentions:
+@Databricks @Codebasics @IndianDataClub #DatabricksWithIDC
