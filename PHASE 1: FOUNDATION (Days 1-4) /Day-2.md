@@ -23,19 +23,18 @@
 df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
 display(df)
 
-| Time (UTC)       | Event | ProdID   | Category     | Brand    | Price   | UserID    |
-| ---------------- | ----- | -------- | ------------ | -------- | ------- | --------- |
-| 2019-10-01 00:00 | view  | 44600062 | —            | shiseido | 35.79   | 541312140 |
-| 2019-10-01 00:00 | view  | 3900821  | water_heater | aqua     | 33.20   | 554748717 |
-| 2019-10-01 00:00 | view  | 17200506 | sofa         | —        | 543.10  | 519107250 |
-| 2019-10-01 00:00 | view  | 1307067  | notebook     | lenovo   | 251.74  | 550050854 |
-| 2019-10-01 00:00 | view  | 1004237  | smartphone   | apple    | 1081.98 | 535871217 |
-| 2019-10-01 00:00 | view  | 1480613  | desktop      | pulser   | 908.62  | 512742880 |
-| 2019-10-01 00:00 | view  | 17300353 | —            | creed    | 380.96  | 555447699 |
-| 2019-10-01 00:00 | view  | 31500053 | —            | luminarc | 41.16   | 550978835 |
-| 2019-10-01 00:00 | view  | 28719074 | shoes        | baden    | 102.71  | 520571932 |
-| 2019-10-01 00:00 | view  | 1004545  | smartphone   | huawei   | 566.01  | 537918940 |
-
+| event_time       | event_type | product_id | category_id | category_code                       | brand    | price   | user_id   | user_session |
+| ---------------- | ---------- | ---------- | ----------- | ----------------------------------- | -------- | ------- | --------- | ------------ |
+| 2019-10-01 00:00 | view       | 44600062   | 2103807459… | null                                | shiseido | 35.79   | 541312140 | 72d76fde…    |
+| 2019-10-01 00:00 | view       | 3900821    | 2053013552… | appliances.environment.water_heater | aqua     | 33.20   | 554748717 | 9333dfbd…    |
+| 2019-10-01 00:00 | view       | 17200506   | 2053013559… | furniture.living_room.sofa          | null     | 543.10  | 519107250 | 566511c2…    |
+| 2019-10-01 00:00 | view       | 1307067    | 2053013558… | computers.notebook                  | lenovo   | 251.74  | 550050854 | 7c90fc70…    |
+| 2019-10-01 00:00 | view       | 1004237    | 2053013555… | electronics.smartphone              | apple    | 1081.98 | 535871217 | c6bd7419…    |
+| 2019-10-01 00:00 | view       | 1480613    | 2053013561… | computers.desktop                   | pulser   | 908.62  | 512742880 | 0d0d91c2…    |
+| 2019-10-01 00:00 | view       | 17300353   | 2053013553… | null                                | creed    | 380.96  | 555447699 | 4fe811e9…    |
+| 2019-10-01 00:00 | view       | 31500053   | 2053013558… | null                                | luminarc | 41.16   | 550978835 | 6280d577…    |
+| 2019-10-01 00:00 | view       | 28719074   | 2053013565… | apparel.shoes.keds                  | baden    | 102.71  | 520571932 | ac1cd4e5…    |
+| 2019-10-01 00:00 | view       | 1004545    | 2053013555… | electronics.smartphone              | huawei   | 566.01  | 537918940 | 406c46ed…    |
 
 
 # Basic operations to see columns - product_id, brand and price.
