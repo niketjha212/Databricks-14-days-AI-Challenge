@@ -19,9 +19,10 @@
 
 ## Exercise:
 
-## Load Data into the dataframe.
 
 ```python
+
+## 1_Load Data into the dataframe.
 
 df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
 display(df)
@@ -40,7 +41,7 @@ display(df)
 | 2019-10-01 00:00 | view       | 1004545    | 2053013555… | electronics.smartphone              | huawei   | 566.01  | 537918940 | 406c46ed…    |
 
 
-## Basic operations to see columns - product_id, brand and price.
+## 2_Basic operations to see columns - product_id, brand and price.
 
 df.select("product_id", "brand",  "price").show(10)
 
@@ -59,14 +60,14 @@ df.select("product_id", "brand",  "price").show(10)
 |   1004545|  huawei| 566.01|
 
 
-## Filter by price greater than 100.
+## 3_Filter by price greater than 100.
 
 df.filter("price > 100").count()
 
 | 27750807 |
 
 
-## Count of types of events.
+## 4_Count of types of events.
 
 df.groupBy("event_type").count().show()
 
@@ -76,7 +77,7 @@ df.groupBy("event_type").count().show()
 |      cart|  926516|
 |      view|40779399|
 
-## Count of top brands.
+## 5_Count of top brands.
 
 top_brands = df.groupBy("brand").count().orderBy("count", ascending=False).limit(5)
 top_brands.show()
