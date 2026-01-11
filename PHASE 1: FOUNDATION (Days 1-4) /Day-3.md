@@ -2,7 +2,7 @@
 
 ---
 
-🔍 𝗧𝗼𝗽𝗶𝗰𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱:
+### 🔍 𝗧𝗼𝗽𝗶𝗰𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱:
 
 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝘃𝘀 𝗣𝗮𝗻𝗱𝗮𝘀
 Pandas works well for small, in-memory datasets, but 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝗲𝗻𝗮𝗯𝗹𝗲𝘀 𝗱𝗶𝘀𝘁𝗿𝗶𝗯𝘂𝘁𝗲𝗱 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴, making it suitable for large-scale data with better performance and fault tolerance.
@@ -18,7 +18,7 @@ UDFs allow applying custom business logic when built-in Spark functions are not 
 
 ---
 
-🛠️ 𝗛𝗮𝗻𝗱𝘀-𝗼𝗻 𝗧𝗮𝘀𝗸𝘀 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱 (Databricks Notebook):
+### 🛠️ Hands-on Tasks Completed (Databricks Notebook):
 
 ✔ Loaded the full e-commerce dataset
 ✔ Performed complex joins across datasets
@@ -27,5 +27,5 @@ UDFs allow applying custom business logic when built-in Spark functions are not 
 
 --- 
 
-## 📚 Learning References & Acknowledgements:
+###  📚 Learning References & Acknowledgements:
 This learning initiative is supported by the data community and learning resources from:
