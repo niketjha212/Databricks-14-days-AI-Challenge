@@ -32,10 +32,12 @@
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-#Load Data into the dataframe.
+1 Load Data into the dataframe.
 df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
 
-# Top 5 products by revenue
+
+
+2 Top 5 products by revenue
 revenue = (events.filter(F.col("event_type") == "purchase") \
     .groupBy("product_id", "product_name") \
     .agg(F.sum("price").alias("revenue")) \
@@ -52,14 +54,19 @@ display(revenue)
 | 1004767    | electronics.smartphone | 5,430,723.43  |
 
 
-# Running total per user
+
+3 Running total per user
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-# Window definition
+
+
+4 Window definition
 window = Window.partitionBy("user_id").orderBy("event_time")
 
-# Running total (cumulative events per user)
+
+
+5 Running total (cumulative events per user)
 df_with_running_total = df.withColumn(
     "cumulative_events",
     F.count("*").over(window)
@@ -83,8 +90,7 @@ display(df_with_running_total.limit(10))
 
 
 
-
-# Conversion rate by category
+6 Conversion rate by category
 from pyspark.sql import functions as F
 
 conversion_df = (
