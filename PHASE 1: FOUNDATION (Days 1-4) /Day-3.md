@@ -33,10 +33,19 @@ from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
 # Top 5 products by revenue
-revenue = events.filter(F.col("event_type") == "purchase") \
+revenue = (events.filter(F.col("event_type") == "purchase") \
     .groupBy("product_id", "product_name") \
     .agg(F.sum("price").alias("revenue")) \
     .orderBy(F.desc("revenue")).limit(5)
+)
+display(revenue)
+
+product_id	category_code	revenue
+1005115	electronics.smartphone	12406807.349999987
+1005105	electronics.smartphone	10239248.680000002
+1004249	electronics.smartphone	6730112.920000016
+1005135	electronics.smartphone	5567806.640000005
+1004767	electronics.smartphone	5430723.429999999
 
 # Running total per user
 window = Window.partitionBy("user_id").orderBy("event_time")
