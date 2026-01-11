@@ -18,7 +18,7 @@
 
 ---
 
-### 🛠️ Hands-on Tasks Completed (Databricks Notebook):
+## 🛠️ Hands-on Tasks Completed (Databricks Notebook):
 
 - Loaded the full e-commerce dataset
 - Performed complex joins across datasets
@@ -27,7 +27,8 @@
 
 --- 
 
-### Practice Exercise:
+## Practice Exercise:
+
 ```sql
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
@@ -149,5 +150,13 @@ display(conversion_df)
 
 ---
 
-###  📚 Learning References & Acknowledgements:
+## 📚 Learning References & Acknowledgements:
 This learning initiative is supported by the data community and learning resources from:
+
+- Databricks – https://www.databricks.com
+- Codebasics – https://www.codebasics.io
+- Indian Data Club – https://indiandataclub.com
+
+
+##🔖 Tags & Mentions:
+@Databricks @Codebasics @IndianDataClub #DatabricksWithIDC
