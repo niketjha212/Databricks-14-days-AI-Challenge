@@ -1,4 +1,4 @@
-# **DAY 1 – Platform Setup & First Steps**
+# **DAY 1: Platform Setup & First Steps**
 
 ## 📘 Things Learnt:
 - Why Databricks vs Pandas/Hadoop?
