@@ -32,6 +32,9 @@
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
+#Load Data into the dataframe.
+df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
+
 # Top 5 products by revenue
 revenue = (events.filter(F.col("event_type") == "purchase") \
     .groupBy("product_id", "product_name") \
@@ -40,21 +43,101 @@ revenue = (events.filter(F.col("event_type") == "purchase") \
 )
 display(revenue)
 
-product_id	category_code	revenue
-1005115	electronics.smartphone	12406807.349999987
-1005105	electronics.smartphone	10239248.680000002
-1004249	electronics.smartphone	6730112.920000016
-1005135	electronics.smartphone	5567806.640000005
-1004767	electronics.smartphone	5430723.429999999
+| product_id | category_code          | revenue       |
+| ---------- | ---------------------- | ------------- |
+| 1005115    | electronics.smartphone | 12,406,807.35 |
+| 1005105    | electronics.smartphone | 10,239,248.68 |
+| 1004249    | electronics.smartphone | 6,730,112.92  |
+| 1005135    | electronics.smartphone | 5,567,806.64  |
+| 1004767    | electronics.smartphone | 5,430,723.43  |
+
 
 # Running total per user
+from pyspark.sql import functions as F
+from pyspark.sql.window import Window
+
+# Window definition
 window = Window.partitionBy("user_id").orderBy("event_time")
-events.withColumn("cumulative_events", F.count("*").over(window))
+
+# Running total (cumulative events per user)
+df_with_running_total = df.withColumn(
+    "cumulative_events",
+    F.count("*").over(window)
+)
+
+display(df_with_running_total.limit(10))
+
+| event_time           | event_type | product_id | category_id | category_code                       | brand    | price  | user_id   | user_session | cumulative_events |
+| -------------------- | ---------- | ---------- | ----------- | ----------------------------------- | -------- | ------ | --------- | ------------ | ----------------- |
+| 2019-10-09T10:30:19Z | view       | 17301541   | 2.05301E+18 | null                                | null     | 162.17 | 205053188 | e1eadbc6…    | 1                 |
+| 2019-10-09T10:30:44Z | view       | 17301541   | 2.05301E+18 | null                                | null     | 162.17 | 205053188 | e1eadbc6…    | 2                 |
+| 2019-10-07T06:23:01Z | view       | 16200119   | 2.05301E+18 | kids.fmcg.diapers                   | moony    | 18.47  | 222907508 | cb653adc…    | 1                 |
+| 2019-10-07T06:26:23Z | view       | 16200162   | 2.05301E+18 | kids.fmcg.diapers                   | moony    | 18.47  | 222907508 | cb653adc…    | 2                 |
+| 2019-10-08T14:29:09Z | view       | 6200883    | 2.05301E+18 | appliances.environment.air_heater   | elenberg | 46.31  | 244673419 | e2f0524c…    | 1                 |
+| 2019-10-12T10:15:48Z | view       | 17300355   | 2.05301E+18 | null                                | creed    | 240.16 | 257849716 | 71e76013…    | 1                 |
+| 2019-10-22T22:05:40Z | view       | 3900896    | 2.05301E+18 | appliances.environment.water_heater | klima    | 77.20  | 266203246 | c83d6f3d…    | 1                 |
+| 2019-10-24T01:14:36Z | view       | 3900896    | 2.05301E+18 | appliances.environment.water_heater | klima    | 77.20  | 266203246 | 56944410…    | 2                 |
+| 2019-10-06T11:29:22Z | view       | 22700574   | 2.05301E+18 | null                                | null     | 88.81  | 278272605 | e4cd7037…    | 1                 |
+| 2019-10-06T11:30:58Z | view       | 22700129   | 2.05301E+18 | null                                | stels    | 66.93  | 278272605 | 0a20874c…    | 2                 |
+
+
+
+
 
 # Conversion rate by category
-events.groupBy("category_code", "event_type").count() \
-    .pivot("event_type").sum("count") \
-    .withColumn("conversion_rate", F.col("purchase")/F.col("view")*100)
+from pyspark.sql import functions as F
+
+conversion_df = (
+    events
+    .filter(F.col("category_code").isNotNull())
+    .groupBy("category_code", "event_type")
+    .count()
+    .groupBy("category_code")
+    .pivot("event_type", ["view", "purchase"])
+    .sum("count")
+    .fillna(0)
+    .withColumn(
+        "conversion_rate",
+        F.when(F.col("view") > 0,
+               (F.col("purchase") / F.col("view")) * 100
+        ).otherwise(0)
+    )
+)
+
+display(conversion_df)
+
+
+| category_code                       | view     | purchase | conversion_rate |
+| ----------------------------------- | -------- | -------- | --------------- |
+| auto.accessories.parktronic         | 12305    | 46       | 0.3738          |
+| furniture.living_room.sofa          | 215471   | 1084     | 0.5031          |
+| stationery.cartrige                 | 7380     | 134      | 1.8157          |
+| sport.bicycle                       | 128759   | 838      | 0.6508          |
+| apparel.sock                        | 2621     | 21       | 0.8012          |
+| appliances.environment.fan          | 2172     | 27       | 1.2431          |
+| kids.swing                          | 31596    | 330      | 1.0444          |
+| electronics.audio.microphone        | 28394    | 430      | 1.5144          |
+| auto.accessories.radar              | 42350    | 494      | 1.1665          |
+| electronics.clocks                  | 1272783  | 17906    | 1.4068          |
+| electronics.audio.music_tools.piano | 35409    | 423      | 1.1946          |
+| appliances.kitchen.hood             | 105149   | 936      | 0.8902          |
+| appliances.kitchen.meat_grinder     | 155551   | 2382     | 1.5313          |
+| electronics.tablet                  | 301992   | 5603     | 1.8553          |
+| apparel.underwear                   | 44374    | 97       | 0.2186          |
+| appliances.kitchen.coffee_machine   | 81826    | 544      | 0.6648          |
+| furniture.bathroom.toilet           | 16495    | 182      | 1.1034          |
+| furniture.bedroom.blanket           | 22470    | 162      | 0.7210          |
+| furniture.living_room.chair         | 71421    | 648      | 0.9073          |
+| appliances.environment.air_heater   | 153390   | 2483     | 1.6187          |
+| appliances.iron                     | 157645   | 3653     | 2.3172          |
+| electronics.audio.headphone         | 1018542  | 30503    | 2.9948          |
+| kids.fmcg.diapers                   | 24203    | 768      | 3.1732          |
+| computers.notebook                  | 1106406  | 15590    | 1.4091          |
+| electronics.smartphone              | 10619448 | 338018   | 3.1830          |
+| appliances.kitchen.refrigerators    | 863411   | 11218    | 1.2993          |
+| electronics.video.tv                | 1055961  | 21565    | 2.0422          |
+| appliances.environment.water_heater | 138784   | 2774     | 1.9988          |
+
 
 ```
 
