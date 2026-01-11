@@ -20,10 +20,10 @@ UDFs allow applying custom business logic when built-in Spark functions are not 
 
 ### 🛠️ Hands-on Tasks Completed (Databricks Notebook):
 
-✔ Loaded the full e-commerce dataset
-✔ Performed complex joins across datasets
-✔ Calculated running totals using window functions
-✔ Created derived features for deeper insights
+- ✔ Loaded the full e-commerce dataset
+- ✔ Performed complex joins across datasets
+- ✔ Calculated running totals using window functions
+- ✔ Created derived features for deeper insights
 
 --- 
 
