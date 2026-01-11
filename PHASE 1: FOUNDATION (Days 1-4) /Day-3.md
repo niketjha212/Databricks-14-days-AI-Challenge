@@ -2,7 +2,7 @@
 
 ---
 
-### 🔍 Topics Learned:
+## 🔍 Topics Learned:
 
 ## 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝘃𝘀 𝗣𝗮𝗻𝗱𝗮𝘀
 - Pandas works well for small, in-memory datasets, but 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝗲𝗻𝗮𝗯𝗹𝗲𝘀 𝗱𝗶𝘀𝘁𝗿𝗶𝗯𝘂𝘁𝗲𝗱 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴, making it suitable for large-scale data with better performance and fault tolerance.
