@@ -1,4 +1,4 @@
-# **𝗗𝗮𝘆-𝟮: Apache Spark Fundamentals**
+# **Day-2: Apache Spark Fundamentals**
 
 ---
 
