@@ -42,7 +42,7 @@ from pyspark.sql.window import Window
 
 
 1. Load Data into the dataframe
-
+---
 df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
 
 
