@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ Hands-On Tasks Completed:
+## 🛠️ Tasks Completed:
 
 1️⃣ Convert CSV to Delta format
 - Loaded raw CSV data and converted it into Delta
@@ -57,7 +57,7 @@
 ---
 
 
-## 📚 Learning References & Acknowledgements:
+## 📚 References & Acknowledgements:
 
 This learning initiative is supported by the data community and learning resources from:
 - Databricks – https://www.databricks.com
