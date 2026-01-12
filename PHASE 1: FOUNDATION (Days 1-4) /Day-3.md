@@ -22,7 +22,7 @@
 
 ---
 
-## 🛠️ Hands-on Tasks Completed (Databricks Notebook):
+## 🛠️ Tasks Completed:
 
 - Loaded the full e-commerce dataset
 - Performed complex joins across datasets
