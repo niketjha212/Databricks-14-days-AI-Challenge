@@ -42,12 +42,12 @@ from pyspark.sql.window import Window
 
 
 1. Load Data into the dataframe
----
+--------------------------------
 df = spark.read.csv("/Volumes/Workspace/ecommerce/ecommerce_data/2019-Oct.csv", header=True, inferSchema=True)
 
 
 2. Creating dataframes of the datsets, before performing Joins
-
+---------------------------------------------------------------
 ## Creating dataframe "products_df"
 products_df = df.select("product_id", "category_id", "category_code", "brand", "price").distinct()
 display(products_df)
@@ -58,7 +58,7 @@ display(events_df)
 
 
 3. Top 5 products by revenue
-
+-----------------------------
 from pyspark.sql import functions as F
 
 revenue_df = (df.filter(F.col("event_type") == "purchase")
@@ -74,11 +74,13 @@ display(revenue_df)
 
 
 4. Window definition
+---------------------
 window = Window.partitionBy("user_id").orderBy("event_time")
 
 
 
 5. Running total (cumulative events per user)
+----------------------------------------------
 
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
@@ -93,6 +95,7 @@ display(df_with_running_total.limit(10))
 
 
 6. Conversion rate by category
+-------------------------------
 
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
