@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ Hands-On Practice (What I Actually Did)
+## 🛠️ Hands-On Tasks Completed:
 
 1️⃣ Convert CSV to Delta format
 - Loaded raw CSV data and converted it into Delta
@@ -50,6 +50,12 @@
 - Learned how Delta enables idempotent data ingestion
 
 ---
+
+## Practice Exercise:
+
+
+---
+
 
 ## 📚 Learning References & Acknowledgements:
 
