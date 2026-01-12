@@ -1,10 +1,14 @@
 # **Day 1: Platform Setup & First Steps**
 
-## 📘 Things Learnt:
+---
+
+## 📘 Learnings:
 - Why Databricks vs Pandas/Hadoop?
 - Lakehouse architecture basics
 - Databricks workspace structure
 - Industry use cases (Netflix, Shell, Comcast)
+
+---
 
 ## 🛠️ Tasks Completed:
 1. Create Databricks Community Edition account
@@ -12,14 +16,14 @@
 3. Create first notebook
 4. Run basic PySpark commands
 
-## 📊 Practice with Data:
+---
+
+## 📚 Practice Exercise:
 
 ### Create simple DataFrame:
 
 data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
-
 df = spark.createDataFrame(data, ["product", "price"])
-
 df.show()
 
 | Product | Price |
@@ -39,6 +43,7 @@ df.filter(df.price > 1000).show()
 |MacBook| 1299|
 
 
+---
 
 ### 🔑 Key Takeaways:
 - Databricks provides an integrated **Lakehouse platform** combining data engineering and analytics.
@@ -53,12 +58,13 @@ df.filter(df.price > 1000).show()
 
 ---
 
-### 📚 Learning References & Acknowledgements:
+### 🔍 References & Acknowledgements:
 This learning initiative is supported by the data community and learning resources from:
 - **Databricks** – https://www.databricks.com
 - **Codebasics** – https://www.codebasics.io
 - **Indian Data Club** – https://indiandataclub.com
 
+---
 
 ### 🔖 Tags & Mentions:
 @Databricks @Codebasics @IndianDataClub #DatabricksWithIDC
