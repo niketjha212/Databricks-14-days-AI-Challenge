@@ -31,7 +31,7 @@
 
 --- 
 
-## Practice Exercise:
+## 🎯 Practice Exercise:
 
 ```sql
 
