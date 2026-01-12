@@ -46,4 +46,12 @@ Learned that explicit column inserts allow NULLs safely.
 Used MERGE instead of INSERT to avoid duplicates.
 Learned how Delta enables idempotent data ingestion.
 
-## 🔑 Key Takeaway
+## 📚 Learning References & Acknowledgements:
+This learning initiative is supported by the data community and learning resources from:
+
+- Databricks – https://www.databricks.com
+- Codebasics – https://www.codebasics.io
+- Indian Data Club – https://indiandataclub.com
+
+## 🔖 Tags & Mentions:
+@Databricks @Codebasics @IndianDataClub #DatabricksWithIDC
