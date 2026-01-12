@@ -7,7 +7,7 @@
 🔹 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝘃𝘀 𝗣𝗮𝗻𝗱𝗮𝘀
 - Pandas works well for small, in-memory datasets, but 𝗣𝘆𝗦𝗽𝗮𝗿𝗸 𝗲𝗻𝗮𝗯𝗹𝗲𝘀 𝗱𝗶𝘀𝘁𝗿𝗶𝗯𝘂𝘁𝗲𝗱 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴, making it suitable for large-scale data with better performance and fault tolerance.
 
-𝗝𝗼𝗶𝗻𝘀 (𝗜𝗻𝗻𝗲𝗿, 𝗟𝗲𝗳𝘁, 𝗥𝗶𝗴𝗵𝘁, 𝗢𝘂𝘁𝗲𝗿)
+🔹𝗝𝗼𝗶𝗻𝘀 (𝗜𝗻𝗻𝗲𝗿, 𝗟𝗲𝗳𝘁, 𝗥𝗶𝗴𝗵𝘁, 𝗢𝘂𝘁𝗲𝗿)
 - Joins allow combining multiple datasets based on a common key. In PySpark, joins are optimized for l𝗮𝗿𝗴𝗲 𝗱𝗮𝘁𝗮 𝘃𝗼𝗹𝘂𝗺𝗲𝘀 and are essential for building analytical datasets from raw tables.
 
 𝗪𝗶𝗻𝗱𝗼𝘄 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 (𝗥𝘂𝗻𝗻𝗶𝗻𝗴 𝗧𝗼𝘁𝗮𝗹𝘀, 𝗥𝗮𝗻𝗸𝗶𝗻𝗴𝘀)
