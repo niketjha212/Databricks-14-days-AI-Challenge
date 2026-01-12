@@ -96,7 +96,7 @@ top_brands.show()
 
 --- 
 
-## 📚 Learning References & Acknowledgements:
+## 🔍 References & Acknowledgements:
 This learning initiative is supported by the data community and learning resources from:
 
 - Databricks – https://www.databricks.com
