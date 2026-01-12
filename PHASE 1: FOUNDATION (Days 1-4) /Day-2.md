@@ -11,7 +11,7 @@
 
 --- 
 
-## Tasks Completed:
+## 🛠️ Tasks Completed:
 - Uploaded a sample e-commerce CSV file.
 - Created a DataFrame using PySpark
 - Performed basic operations : select(), show(), dtypes(), filter(), groupBy(), orderBy()
